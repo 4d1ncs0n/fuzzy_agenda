@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Proyecto de ejecución de scripts en html
+        </title>
+    </head>
+    <body>
+        <form action='/output/' method='post'>
+            {% csrf_token %}
+            Fecha de ejecución:
+            <input type='text' name='param' required><br><br>
+            {% if data %}
+            {{data | safe}} 
+            {% endif %}
+            <br><br>
+            <input type='submit' value='Ejecutar script'>
+        </form>
+    </body>
+</html>
